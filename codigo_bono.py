@@ -100,9 +100,7 @@ for l, m, label, nombre_archivo in configs:
 
     print(f"Figura guardada: {ruta}")
 
-# ==========================================
 # Figura 2: Multipolos bajos
-# ==========================================
 
 terminos_bajos = [
     (2, 0, 1.0),
