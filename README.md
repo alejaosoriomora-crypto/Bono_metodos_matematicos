@@ -11,4 +11,4 @@ Este repositorio contiene el código y las figuras utilizadas para el análisis 
 - `referencias.bib`: bibliografía.
 - `Figuras/`: imágenes empleadas en el informe.
 
-Autor: Alejandra del Mar Osorio
+Autor: Alejandra del Mar Osorio Mora
