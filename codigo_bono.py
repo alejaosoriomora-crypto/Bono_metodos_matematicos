@@ -4,27 +4,20 @@ from scipy.special import sph_harm_y
 from scipy.special import yn
 import os
 
-# ==========================================
-# Carpeta donde está este archivo
-# ==========================================
 
 carpeta = os.path.dirname(os.path.abspath(__file__))
 
 print("Las imágenes se guardarán en:")
 print(carpeta)
 
-# ==========================================
 # Malla angular
-# ==========================================
 
 phi_1d = np.linspace(0, 2*np.pi, 600)
 theta_1d = np.linspace(0, np.pi, 300)
 
 phi, theta = np.meshgrid(phi_1d, theta_1d)
 
-# ==========================================
 # Armónicos esféricos reales
-# ==========================================
 
 def Y_real(l, m, theta, phi):
     """
@@ -49,9 +42,7 @@ def Y_real(l, m, theta, phi):
             sph_harm_y(l, -m, theta, phi)
         )
 
-# ==========================================
 # Función para graficar
-# ==========================================
 
 def plot_mapa(ax, datos, titulo, cmap='RdBu_r'):
 
@@ -70,9 +61,7 @@ def plot_mapa(ax, datos, titulo, cmap='RdBu_r'):
 
     return im
 
-# ==========================================
 # Figura 1: Armónicos individuales
-# ==========================================
 
 configs = [
     (2, 0, r'$Y_2^0$', 'Y20.png'),
@@ -174,9 +163,7 @@ plt.close()
 
 print(f"Figura guardada: {ruta_bajos}")
 
-# ==========================================
 # Figura 3: Multipolos altos
-# ==========================================
 
 terminos_altos = [
     (20, 5, 1.0),
@@ -257,8 +244,6 @@ ax.plot(x, N2, label=r'$N_2(x)$', color='forestgreen', linewidth=2)
 
 # Línea de referencia en y = 0
 ax.axhline(0, color='black', linewidth=0.8, linestyle='--')
-
-# Limitar el eje y para visualizar mejor (las divergencias en x->0 son muy grandes)
 ax.set_ylim(-3, 1)
 
 ax.set_xlabel('$x$', fontsize=13)
